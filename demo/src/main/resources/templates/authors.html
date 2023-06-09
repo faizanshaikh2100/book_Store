@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <h1>Authors</h1>
+    </div>
+    <table class="table table-dark table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>Author Name</th>
+            <th>Author Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="author : ${authors}">
+
+            <td th:text="${author.authorName}"></td>
+            <td th:text="${author.email}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href = "@{/book/getApprovedBooks}" class ="btn btn-warning">Approved Books</a>
+    <a th:href = "@{/management/pendingBookApprovals2}" class ="btn btn-warning">Pending Approvals</a>
+
+
+</div>
+</body>
+</html>
